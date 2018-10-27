@@ -40,10 +40,10 @@ class MessageHandler(BaseHTTPRequestHandler):
         status = parse_qs(data)["status"][0]
 
         udacian=Udacian(name,city,enrollment,nanodegree,status)
-        
+
 
         # Store it in memory.
-        memory.append(message)
+        memory.append(udacian)
 
         # 1. Send a 303 redirect back to the root page.
         self.send_response(303)
@@ -52,7 +52,15 @@ class MessageHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
     	#get the info and display it
+        self.send_response(200)
 
+        # Then send headers.
+        self.send_header('Content-type', 'text/html; charset=utf-8')
+        self.end_headers()
+
+        # 2. Put the response together out of the form and the stored messages.
+        for(udacian u in memory):
+            print_udacian(u)
 if __name__ == '__main__':
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, MessageHandler)
