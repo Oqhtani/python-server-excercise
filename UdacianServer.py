@@ -62,7 +62,7 @@ class MessageHandler(BaseHTTPRequestHandler):
         # 2. Put the response together out of the form and the stored messages.
         for udacian in memory:
             list+=Udacian.print_udacian(udacian)
-        msg=form.format("\n".join(list))
+        msg=form.format("\n"+list)
         self.wfile.write(msg.encode())
 
 
