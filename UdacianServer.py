@@ -5,7 +5,7 @@
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import parse_qs
-import Udacian
+from  Udacian import*
 
 memory = []
 form = '''<!DOCTYPE html>
@@ -40,7 +40,7 @@ class MessageHandler(BaseHTTPRequestHandler):
         nanodegree = parse_qs(data)["nanodegree"][0]
         status = parse_qs(data)["status"][0]
 
-        udacian=Udacian(name,city,enrollment,nanodegree,status)
+        udacian=Udacian.Udacian(name,city,enrollment,nanodegree,status)
 
 
         # Store it in memory.
