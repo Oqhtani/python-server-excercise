@@ -1,4 +1,4 @@
-Class Udacian:
+class Udacian:
 
     def __init__(self,name,city,enrollment,nanodegree,status):
         self.name=name
