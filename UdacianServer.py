@@ -57,10 +57,14 @@ class MessageHandler(BaseHTTPRequestHandler):
         # Then send headers.
         self.send_header('Content-type', 'text/html; charset=utf-8')
         self.end_headers()
-
+        list=""
         # 2. Put the response together out of the form and the stored messages.
         for udacian in memory:
-            print_udacian(u)
+            list+=print_udacian(u)
+        msg=form.format("\n".join(list))
+        self.wfile.write(msg.encode())
+
+        
 if __name__ == '__main__':
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, MessageHandler)

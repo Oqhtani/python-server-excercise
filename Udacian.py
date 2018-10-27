@@ -8,5 +8,5 @@ Class Udacian:
         self.status=status
 
     def print_udacian(self):
-        self.wfile.write(("\n"+self.name+" are from "+self.city+". they are "+self.enrollment
-        +" in the "+self.nanodegree+" and are "+self.status).encode())
+        return("\n"+self.name+" are from "+self.city+". they are "+self.enrollment
+        +" in the "+self.nanodegree+" and are "+self.status)
