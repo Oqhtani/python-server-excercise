@@ -32,7 +32,7 @@ class MessageHandler(BaseHTTPRequestHandler):
     def do_POST(self):
     	#Submit the form
         length = int(self.headers.get('Content-length', 0))
-        data = self.rfile.read(length).decode().
+        data = self.rfile.read(length).decode()
         name = parse_qs(data)["name"][0]
         city = parse_qs(data)["city"][0]
         enrollment = parse_qs(data)["enrollment"][0]
