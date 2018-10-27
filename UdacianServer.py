@@ -40,7 +40,7 @@ class MessageHandler(BaseHTTPRequestHandler):
         nanodegree = parse_qs(data)["nanodegree"][0]
         status = parse_qs(data)["status"][0]
 
-        udacian=Udacian.Udacian(name,city,enrollment,nanodegree,status)
+        udacian=Udacian(name,city,enrollment,nanodegree,status)
 
 
         # Store it in memory.
