@@ -59,7 +59,7 @@ class MessageHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
         # 2. Put the response together out of the form and the stored messages.
-        for(udacian in memory):
+        for udacian in memory:
             print_udacian(u)
 if __name__ == '__main__':
     server_address = ('', 8000)
