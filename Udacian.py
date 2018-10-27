@@ -8,5 +8,5 @@ class Udacian:
         self.status=status
 
     def print_udacian(self):
-        return("\n"+self.name+" are from "+self.city+". they are "+self.enrollment
-        +" in the "+self.nanodegree+" and are "+self.status)
+        return("\n"+self.name+" , "+self.city+" , "+self.enrollment
+        +" , "+self.nanodegree+" , "+self.status)
