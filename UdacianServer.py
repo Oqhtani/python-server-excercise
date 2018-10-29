@@ -6,6 +6,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import parse_qs
 from  Udacian import*
+import os
 
 memory = []
 form = '''<!DOCTYPE html>
@@ -67,6 +68,7 @@ class MessageHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server_address = ('', 8000)
+    port = int(os.environ.get('PORT', 8000))
+    server_address = ('', port)
     httpd = HTTPServer(server_address, MessageHandler)
     httpd.serve_forever()
