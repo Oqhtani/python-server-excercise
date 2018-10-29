@@ -49,7 +49,7 @@ class MessageHandler(BaseHTTPRequestHandler):
 
         # 1. Send a 303 redirect back to the root page.
         self.send_response(303)
-        self.send_header('Location', slef.path)
+        self.send_header('Location', 'www.udacianserver.herokuapp.com/')
         self.end_headers()
 
     def do_GET(self):
