@@ -30,7 +30,7 @@ form = '''<!DOCTYPE html>
 '''
 
 
-class MessageHandler(BaseHTTPRequestHandler):
+class MessageHandler(http.server.BaseHTTPRequestHandler):
     def do_POST(self):
     	#Submit the form
         length = int(self.headers.get('Content-length', 0))
