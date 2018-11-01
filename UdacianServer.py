@@ -3,7 +3,7 @@
 # Udacian activity to practice http get and post
 #
 
-import http.server
+import http
 from urllib.parse import parse_qs
 from  Udacian import*
 import os
