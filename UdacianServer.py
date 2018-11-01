@@ -3,7 +3,7 @@
 # Udacian activity to practice http get and post
 #
 
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import http.server
 from urllib.parse import parse_qs
 from  Udacian import*
 import os
