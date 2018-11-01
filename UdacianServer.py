@@ -30,7 +30,7 @@ form = '''<!DOCTYPE html>
 '''
 
 
-class MessageHandler(http.server.BaseHTTPRequestHandler):
+class MessageHandler(server.BaseHTTPRequestHandler):
     def do_POST(self):
     	#Submit the form
         length = int(self.headers.get('Content-length', 0))
@@ -70,5 +70,5 @@ class MessageHandler(http.server.BaseHTTPRequestHandler):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8000))   # Use PORT if it's there.
     server_address = ('', port)
-    httpd = http.server.HTTPServer(server_address, MessageHandler)
+    httpd = server.HTTPServer(server_address, MessageHandler)
     httpd.serve_forever()
