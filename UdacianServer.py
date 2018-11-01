@@ -3,7 +3,7 @@
 # Udacian activity to practice http get and post
 #
 
-import http.server
+from http import*
 from urllib.parse import parse_qs
 from  Udacian import*
 import os
@@ -30,7 +30,7 @@ form = '''<!DOCTYPE html>
 '''
 
 
-class MessageHandler(server.BaseHTTPRequestHandler):
+class MessageHandler(http.server.BaseHTTPRequestHandler):
     def do_POST(self):
     	#Submit the form
         length = int(self.headers.get('Content-length', 0))
@@ -70,5 +70,5 @@ class MessageHandler(server.BaseHTTPRequestHandler):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8000))   # Use PORT if it's there.
     server_address = ('', port)
-    httpd = server.HTTPServer(server_address, MessageHandler)
+    httpd = http.server.HTTPServer(server_address, MessageHandler)
     httpd.serve_forever()
